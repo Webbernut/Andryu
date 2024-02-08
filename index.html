@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="css/wrapper.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/content.css">
+	<link rel="stylesheet" href="css/footer.css">
+	
+</head>
+<body>
+	<div class="container">
+		<header>
+			<div class="header_block">
+				<img src="./pictures/png/photo.png" alt="" class="header_block_img">
+				<p class="header_block_text">Свадебное<br>приглашение</p>
+			</div>
+		</header>
+		<content>
+			<div class="ticket">
+				<p class="ticket_title">Дорогие родные<br>и друзья</p>
+				<p class="ticket_text">Вы получили билет на<br>полёт вместе с нами</p>
+				<p class="ticket_text">Ведт случится самое главное<br>событие года - мы женимся!</p>
+				<div class="ticket_block_taimer">
+					<img src="./pictures/png/_2.png" alt="" class="ticket_img">
+					<div class="ticket_taimer">
+						<div class="timer">
+							<div class="timer__items">
+							  <div class="timer__item timer__days">00</div>
+							  <div class="timer__item timer__hours">00</div>
+							  <div class="timer__item timer__minutes">00</div>
+							  <div class="timer__item timer__seconds">00</div>
+							</div>
+						  </div>
+					</div>
+				</div>
+			</div>
+			<div class="place">
+				<p class="place_subtitle">Локация</p>
+				<p class="place_text">Тут Адрес</p>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3573.9858276173472!2d28.339305791388433!3d57.816542242906245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c0195a45bc540d%3A0xf9cc77236f3f3fc0!2z0KDQtdGB0YLQvtGA0LDQvSBNYW1hIFJvbWE!5e0!3m2!1sru!2sru!4v1705858531211!5m2!1sru!2sru" class="place_map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+			<div class="detail">
+				<p class="detail_subtitle">Детали</p>
+				<p class="detail_text">Просим вас не дарить нам цветы - мы не успеем<br>
+					 насладиться их красотой до отъезда. <br>
+					 А вот бутылочке вина для нашей <br>семейной винотеки будем очень рады!</p>
+				<p class="detail_text"><b>Мужчины</b>
+					<br>Классические костюмы и <br>светлые рубашки.</p>
+					<p class="detail_text"><b>Женщины</b>
+						<br>Вечерние платья любого цвета.
+						<br>Просим избегать черного и белого цвета.</p>
+					
+			</div>
+			<div class="contact">
+				<p class="contact_header">Контакты</p>
+				<div class="contact_number">
+					<p class="contact_number_text">Жених: 89922968105</p>
+					<a rel="stylesheet" href="https://vk.com/stunt_cryyy"><img src="./pictures/icon/icons8-vk-50.png" alt=""class="contact_number_png"></a>
+				</div>
+				<div class="contact_number">
+					<p class="contact_number_text">Невеста: 89009944767</p>
+					<a rel="stylesheet" href="https://vk.com/katyaniggarepchik"><img src="./pictures/icon/icons8-vk-50.png" alt="" class="contact_number_png"></a>
+				</div>
+				<p class="contact_title">С любовью <br> Эндрю и Катя!</p>
+			</div>
+		</content>
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+		  // конечная дата
+		  const deadline = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 01);
+		  // id таймера
+		  let timerId = null;
+		  // склонение числительных
+		  function declensionNum(num, words) {
+			return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
+		  }
+		  // вычисляем разницу дат и устанавливаем оставшееся времени в качестве содержимого элементов
+		  function countdownTimer() {
+			const diff = deadline - new Date();
+			if (diff <= 0) {
+			  clearInterval(timerId);
+			}
+			const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
+			const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+			const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+			const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+			$days.textContent = days < 10 ? '0' + days : days;
+			$hours.textContent = hours < 10 ? '0' + hours : hours;
+			$minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
+			$seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
+			$days.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
+			$hours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
+			$minutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
+			$seconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
+		  }
+		  // получаем элементы, содержащие компоненты даты
+		  const $days = document.querySelector('.timer__days');
+		  const $hours = document.querySelector('.timer__hours');
+		  const $minutes = document.querySelector('.timer__minutes');
+		  const $seconds = document.querySelector('.timer__seconds');
+		  // вызываем функцию countdownTimer
+		  countdownTimer();
+		  // вызываем функцию countdownTimer каждую секунду
+		  timerId = setInterval(countdownTimer, 1000);
+		});
+	  </script>
+</body>
+</html>
