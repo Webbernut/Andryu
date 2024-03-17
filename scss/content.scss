@@ -24,11 +24,12 @@
     margin: auto;
 }
 .ticket{
+    margin: auto;
     padding-top: 50px;
-    width: 100%;
+    width: 90%;
     height:50vw;
     background-image: url(../pictures/png/atlas.png);
-    background-size: 85%;
+    background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
@@ -42,8 +43,7 @@
         margin-bottom: 1.3vw;
     }
     .ticket_img{
-        order: -1;
-        width: 70%;
+        width: 55%;
     }
     .ticket_block_taimer{
         margin-top: 2vw;
@@ -81,7 +81,7 @@
         margin-bottom: 3vw;
     }
     .place_map{
-        width: 100%;
+        width: 80%;
         height: 30vw;
     }
 }
